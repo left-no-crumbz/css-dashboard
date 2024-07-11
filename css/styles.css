@@ -30,6 +30,11 @@ p, h1, h2, h3, h4, h5, h6 {
     overflow-wrap: break-word;
 }
 
+:root {
+    --blue: #1992D4;
+    --light-blue: #E2E8F0;
+    --yellow: #F0B429;
+}
 
 .flex {
     display: flex;
@@ -56,27 +61,37 @@ p, h1, h2, h3, h4, h5, h6 {
 
 
 #sidebar {
-    background-color: #1992D4;
+    background-color: var(--blue);
+    color: white;
 }
 
 .header {
     grid-template-rows: repeat(2, 100px);
-    padding-left: 2.5rem;
-    padding-right: 2.5rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    box-shadow: rgba(33, 35, 38, 0.1) 0px 15px 15px -10px;
 }
 
-.search-top {
+.search-top, .account {
     grid-template-columns: 2fr 1fr;
 }
 
-.search, .notification {
+.search {
     gap: 1rem;
 }
 
+.notification {
+    gap: 2rem;
+    justify-self: flex-end;    
+}
+
+.notification > p {
+    font-weight: 600;
+}
 .search > input {
     padding-left: 1rem;
-    border: 1px solid #E2E8F0;
-    background-color: #E2E8F0;
+    border: 1px solid var(--light-blue);
+    background-color: var(--light-blue);
     width: 550px;
     border-radius: .75rem;
     outline-width: 0px;
@@ -87,4 +102,33 @@ p, h1, h2, h3, h4, h5, h6 {
     border-radius: 50%;
     clip-path: circle();
     object-fit: cover;
+}
+
+.user, .header-buttons{
+    gap: 2rem;
+}
+
+.text {
+    font-weight: 600;
+}
+
+.text > h1 {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+button {
+    font-weight: 600;
+    color: white;
+    background-color: var(--blue);
+    border: 1px solid var(--blue);
+    width: 120px;
+    padding: .50em;
+    border-radius: 1.2rem;
+    outline-width: 0;
+    cursor: pointer;
+}
+
+.content {
+    grid-column: 2 / 3;
+    background-color: var(--light-blue);
 }
