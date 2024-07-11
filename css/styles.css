@@ -5,16 +5,21 @@
 
 * {
     margin: 0;
+    padding: 0;
+    font: inherit;
 }
 
 body {
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
+    font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";      
 }
 
 img, picture, video, canvas, svg {
     display: block;
     max-width: 100%;
+    height: auto;
+    font-style: italic;
 }
 
 input, button, textarea, select {
@@ -26,12 +31,60 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 
+.flex {
+    display: flex;
+}
+
+.grid {
+    display: grid;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+
 
 #container {
     display: grid;
     grid-template-columns: 1fr 4fr;
 }
 
-.sidebar-item {
-    display: flex;
+
+#sidebar {
+    background-color: #1992D4;
+}
+
+.header {
+    grid-template-rows: repeat(2, 100px);
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+}
+
+.search-top {
+    grid-template-columns: 2fr 1fr;
+}
+
+.search, .notification {
+    gap: 1rem;
+}
+
+.search > input {
+    padding-left: 1rem;
+    border: 1px solid #E2E8F0;
+    background-color: #E2E8F0;
+    width: 550px;
+    border-radius: .75rem;
+    outline-width: 0px;
+}
+
+.account-image {
+    border: 1px red solid;
+    border-radius: 50%;
+    clip-path: circle();
+    object-fit: cover;
 }
