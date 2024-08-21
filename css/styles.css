@@ -12,7 +12,8 @@
 body {
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
-    font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";      
+    font-family: "Roboto", system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";      
+    height: 100dvh;
 }
 
 img, picture, video, canvas, svg {
@@ -61,15 +62,19 @@ p, h1, h2, h3, h4, h5, h6 {
 
 
 #sidebar {
+    min-height: 100vh;
     background-color: var(--blue);
     color: white;
+    grid-column: 1 / 2;
+    grid-row: 1 / 4;
 }
 
 .header {
-    grid-template-rows: repeat(2, 100px);
+    grid-template-rows: repeat(2, 1fr);
     padding-left: 3rem;
     padding-right: 3rem;
     box-shadow: rgba(33, 35, 38, 0.1) 0px 15px 15px -10px;
+    padding-bottom: 1rem;
 }
 
 .search-top, .account {
@@ -109,11 +114,10 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 .text {
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .text > h1 {
-    font-weight: 700;
     font-size: 1.5rem;
 }
 button {
@@ -121,8 +125,8 @@ button {
     color: white;
     background-color: var(--blue);
     border: 1px solid var(--blue);
-    width: 120px;
-    padding: .50em;
+    width: 90px;
+    padding: .35em .30em;
     border-radius: 1.2rem;
     outline-width: 0;
     cursor: pointer;
@@ -130,5 +134,31 @@ button {
 
 .content {
     grid-column: 2 / 3;
+    grid-template-columns: 2fr 1fr;
     background-color: var(--light-blue);
 }
+
+.projects {
+    padding: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.projects > h2 {
+    grid-column: span 2;
+    font-weight: 500;
+}
+
+.card {
+    background-color: white;
+    padding: 1rem;
+    border-left: 5px solid var(--yellow);
+    border-radius: .75rem;
+    
+    h2 {
+        font-weight: 500;
+    }
+}
+
+
+
